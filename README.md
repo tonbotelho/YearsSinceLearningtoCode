@@ -5,7 +5,7 @@
 | Story Points  | Time |
 | ------------- | ------------- |
 | 1  | < 4 hours |
-| 2  | 2 day  |
+| 2  | 1 day  |
 | 3  | 2 days |
 | 5  | 4 days |
 
