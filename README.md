@@ -13,12 +13,12 @@ Anything greater than story point 5, we should break down into a smaller story.
 
 ### Scrum Master Rota
 
-| Date  | Person |
-| ------------- | ------------- |
-| 10/10/2018  | ?? |
-| 17/10/2018  | ?? |
-| 24/10/2018  | ?? |
-| 31/10/2018  | ?? |
+| Date        |  Liane  |
+| ------------| ------------- |
+| 10/10/2018  | Group Introdution, Create the epics and break down the work into story and sorting out each story into types. |
+| 17/10/2018  | Splited the project into individual components so people can work independently without blocking progress. |
+| 24/10/2018  | Talked through proof of concept code, helping each other with coding issues. |
+| 31/10/2018  | Coding progress. |
 | 07/11/2018  | ?? |
 
 ### Scrum Master Responsibilities
