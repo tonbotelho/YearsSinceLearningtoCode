@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+//https://www.w3schools.com/howto/howto_js_full_page_tabs.asp
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color:black;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+#All Respondent {background-color: green;}
+#Professional Developers {background-color: green;}
+</style>
+</head>
+<body>
+
+
+<button class="tablink" onclick="openPage('All Respondent', this, 'grey')" id="defaultOpen">All Respondent</button>
+<button class="tablink" onclick="openPage('Professional Developers', this, 'grey')">Professional Developers</button>
+
+
+<div id="All Respondent" class="tabcontent" >
+  <h3>Experience</h3>
+  <p>There is a wide range of experience levels among developers, and a full third of professional developers on Stack Overflow learned to code within the past five years.</p>
+    <div id="years_coding"> </div>
+</div>
+
+<div id="Professional Developers" class="tabcontent" >
+  <h3>Experience</h3>
+  <p>There is a wide range of experience levels among developers, and a full third of professional developers on Stack Overflow learned to code within the past five years.</p>
+    <div id="years_coding_prof"></div>
+</div>
+
+
+<script>
+function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+     <!--Load the AJAX API  https://developers.google.com/chart/interactive/docs/gallery/barchart-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    /* Used the Google Charts API */
+    google.charts.load('current', {packages: ['corechart', 'bar']});// load library
+    google.charts.setOnLoadCallback(draw_years_coding);// start the chart Years Coding
+    google.charts.setOnLoadCallback(draw_years_coding_prof);// start the chart Years Coding
+
+    function draw_years_coding() {
+        /** Draw the graphic based in json file */
+
+        // Variable declarations
+        var years_coding_data = {%years_coding_data%}; // {%...%} - The delimiters content will replaced to data come python code.
+        var data = new google.visualization.DataTable();// instance DataTable
+        var options = { // Settings to chart
+            title: 'Years Coding',
+            height: 500,
+            width: 700,
+          };
+        var chart = new google.visualization.BarChart(document.getElementById('years_coding')); // get the place where put the graph on HTML Code
+
+        // Add columns to graph
+        data.addColumn("string", "Years Coding");
+        data.addColumn("number", "Statistic %");
+
+        // Add Rows
+        for (key in years_coding_data){
+            data.addRow( [key, parseFloat(years_coding_data[key])] );
+        }//end for
+
+        chart.draw(data, options);// draw chart with settings
+    }//end draw_years_coding
+
+    function draw_years_coding_prof() {
+        /** Draw the graphic based in json file */
+
+        // Variable declarations
+        var years_coding_prof_data = {%years_coding_prof_data%}; // {%...%} - The delimiters content will replaced to data come python code.
+        var data = new google.visualization.DataTable();// instance DataTable
+        var options = { // Settings to chart
+            title: 'Years Coding Professional',
+            height: 500,
+            width: 700,
+          };
+        var chart = new google.visualization.BarChart(document.getElementById('years_coding_prof')); // get the place where put the graph on HTML Code
+
+        // Add columns to graph
+        data.addColumn("string", "Years Coding Prof");
+        data.addColumn("number", "Statistic %");
+
+        // Add Rows
+        for (key in years_coding_prof_data){
+            data.addRow( [key, parseFloat(years_coding_prof_data[key])] );
+        }//end for
+
+        chart.draw(data, options);// draw chart with settings
+    }//end draw_years_coding
+    </script>
+</body>
+</html>
