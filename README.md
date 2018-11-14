@@ -19,7 +19,12 @@ Anything greater than story point 5, we should break down into a smaller story.
 | 17/10/2018  | Splited the project into individual components so people can work independently without blocking progress. |
 | 24/10/2018  | Talked through proof of concept code, helping each other with coding issues. |
 | 31/10/2018  | Coding progress. |
-| 07/11/2018  | ?? |
+| 07/11/2018  | Coding process...Talk about the inssues, show to the client what have been done (teacher). |
+| 08/11/2018  | Code displed on website.|
+| 12/11/2018  | Deta test done, values not the same for Professional developers |
+| 13/11/2018  | Code input all together.|
+
+| 14/11/2018  | Code done
 
 ### Scrum Master Responsibilities
 Run the retro
