@@ -9,6 +9,13 @@
 | 3  | 2 days |
 | 5  | 4 days |
 
+Used programs:
+Python
+HTML, CSS, JAVASCRIPT.
+
+data: 
+CSV file.
+
 Anything greater than story point 5, we should break down into a smaller story.
 
 ### Scrum Master Rota
@@ -23,8 +30,8 @@ Anything greater than story point 5, we should break down into a smaller story.
 | 08/11/2018  | Code displed on website.|
 | 12/11/2018  | Deta test done, values not the same for Professional developers |
 | 13/11/2018  | Code input all together.|
-
-| 14/11/2018  | Code done
+| 14/11/2018  | Code done|
+| 21/11/2018  | Project presentation.|
 
 ### Scrum Master Responsibilities
 Run the retro
